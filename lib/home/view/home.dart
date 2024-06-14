@@ -1,5 +1,7 @@
+import 'package:dashloc_interview/pokemon_details/view/pokemon_details.dart';
 import 'package:dashloc_interview/services/check_internet/view/no_internet_screen.dart';
 import 'package:dashloc_interview/util/constant_colors.dart';
+import 'package:dashloc_interview/util/navigation_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -195,11 +197,17 @@ class Home extends StatelessWidget {
                                 crossAxisCount: 3,
                                 mainAxisExtent: deviceScreenHeight * 0.25,
                               ),
-                              itemBuilder: (context, index) => PokemonCard(
-                                id: pokemonList[index]["id"],
-                                name: pokemonList[index]["name"],
-                                type: pokemonList[index]["types"],
-                                image: pokemonList[index]["sprite"],
+                              itemBuilder: (context, index) => GestureDetector(
+                                onTap: () => NavigationHelper.push(
+                                  context: context,
+                                  destination: const PokemonDetails(),
+                                ),
+                                child: PokemonCard(
+                                  id: pokemonList[index]["id"],
+                                  name: pokemonList[index]["name"],
+                                  type: pokemonList[index]["types"],
+                                  image: pokemonList[index]["sprite"],
+                                ),
                               ),
                             ),
                           ),

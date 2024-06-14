@@ -1,4 +1,4 @@
-
+import 'package:dashloc_interview/util/constant_colors.dart';
 import 'package:flutter/material.dart';
 
 class PokemonCard extends StatelessWidget {
@@ -29,7 +29,7 @@ class PokemonCard extends StatelessWidget {
             width: double.infinity,
             height: deviceScreenHeight * 0.125,
             decoration: BoxDecoration(
-              color: const Color(0xffF3F9EF),
+              color: ConstantColors.pokemonBackgroundColor,
               image: DecorationImage(
                 image: NetworkImage(
                   image,
