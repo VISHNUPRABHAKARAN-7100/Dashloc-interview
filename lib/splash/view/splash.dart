@@ -1,5 +1,8 @@
+import 'dart:async';
+import 'package:dashloc_interview/home/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../util/navigation_helper.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -18,13 +21,13 @@ class _SplashState extends State<Splash> {
         SystemUiOverlay.bottom,
       ],
     );
-    // Future.delayed(
-    //   const Duration(seconds: 3),
-    //   () => NavigationHelper.pushReplacement(
-    //     context: context,
-    //     destination: const Login(),
-    //   ),
-    // );
+    Timer(
+      const Duration(seconds: 3),
+      () => NavigationHelper.pushReplacement(
+        context: context,
+        destination: Home(),
+      ),
+    );
     super.initState();
   }
 
@@ -34,8 +37,9 @@ class _SplashState extends State<Splash> {
       backgroundColor: Colors.blue,
       body: Center(
         child: Text(
-          'Logo',
+          'Pokemon',
           style: TextStyle(
+            fontSize: 40,
             color: Colors.white,
           ),
         ),

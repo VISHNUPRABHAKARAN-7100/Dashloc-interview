@@ -1,4 +1,5 @@
 import 'package:dashloc_interview/splash/view/splash.dart';
+import 'package:dashloc_interview/util/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -21,9 +22,28 @@ class MyApp extends StatelessWidget {
       data: MediaQuery.of(context).copyWith(
         textScaler: const TextScaler.linear(1),
       ),
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          primarySwatch: MaterialColor(
+            ConstantColors.primaryColor.value,
+            const <int, Color>{
+              50: Color(0xFFE0E7FF),
+              100: Color(0xFFC7D3FF),
+              200: Color(0xFFA9BEFF),
+              300: Color(0xFF8BA0FF),
+              400: Color(0xFF6D82FF),
+              500: Color(0xFF3558CD),
+              600: Color(0xFF1C34A3),
+              700: Color(0xFF00107A),
+              800: Color(0xFF000756),
+              900: Color(0xFF000333),
+            },
+          ),
+          useMaterial3: false,
+        ),
         debugShowCheckedModeBanner: false,
-        home: Splash(),
+        home: const Splash(),
       ),
     );
   }
