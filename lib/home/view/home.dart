@@ -1,12 +1,11 @@
 import 'package:dashloc_interview/pokemon_details/view/pokemon_details.dart';
 import 'package:dashloc_interview/services/check_internet/view/no_internet_screen.dart';
-import 'package:dashloc_interview/util/constant_colors.dart';
 import 'package:dashloc_interview/util/navigation_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../services/check_internet/connectivity_services/connectivity_services.dart';
 import 'widgets/pokemon_card.dart';
+import 'widgets/tab_bar_of_home.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
@@ -140,51 +139,7 @@ class Home extends StatelessWidget {
                 body: Column(
                   children: [
                     const Divider(),
-                    const TabBar(
-                      labelStyle: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
-                      labelColor: Colors.black,
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      indicator: UnderlineTabIndicator(
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(15),
-                        ),
-                        borderSide: BorderSide(
-                          width: 5.0,
-                          color: ConstantColors.primaryColor,
-                        ),
-                      ),
-                      tabs: [
-                        Tab(
-                          text: 'All Pokemons',
-                        ),
-                        Tab(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Favorites',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              SizedBox(width: 5),
-                              CircleAvatar(
-                                radius: 13,
-                                backgroundColor: Colors.blue,
-                                child: Text(
-                                  '1',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    const TabBarOfHome(),
                     Expanded(
                       child: TabBarView(
                         children: [
